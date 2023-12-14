@@ -2,7 +2,11 @@
 python 3.10.7
 working Feb. 17 2023
 a script to delete all possible messages from your data package using the Discord API
-to use: paste your auth token and run script from package/messages
+to use:
+paste your auth token and run script from package/messages
+your auth token can be found in request headers in Chrome dev tools etc
+other notes:
+some messages from servers may be undeletable if you no longer have access to them
 also, it's going to take a while due to rate limiting
 """
 
@@ -15,7 +19,7 @@ import json
 #TODO implement multiple connections?
 delay = 1.75
 lsdir = filter(lambda x: os.path.isdir(x), os.listdir())
-#info about parsing messages.csv:
+#notes about parsing messages.csv:
 #the first row is a header
 #multiple attachments to a single message are separated by spaces
 #quotes that occur in a message are escaped with another quote
